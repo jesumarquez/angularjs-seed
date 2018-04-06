@@ -27,4 +27,19 @@ router.patch('/:id', function (req, res) {
     res.end();
 });
 
+router.delete('/:id', function (req, res) {
+    var index = customers.findIndex(function(item){
+        return item.id == req.params.id;
+    });
+
+    if(index >= 0) {
+        customers.splice(index, 1);
+        res.status(204);
+    }
+    else {
+        res.status(404);
+    }
+    res.end();
+});
+
 module.exports = router;

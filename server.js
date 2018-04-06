@@ -10,7 +10,7 @@ app.use('/static', express.static(__dirname + '/node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/api/customer', customerRouter);
+app.use('/api/customers', customerRouter);
 
 app.listen(port, function() {
     console.log('Server running on http://localhost:' +  port);
