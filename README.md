@@ -1,2 +1,2 @@
 # angularjs-seed
-Angularjs Seed
+Angularjs Seed + API para pruebas.
