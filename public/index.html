@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
     <title>Document</title>
 </head>
 <body>
-    <h1>Demo</h1>
-
+    <div ng-controller="MainController as main">
+        <h1>Demo <span ng-bind="main.version"></span></h1>
+        <a href="customer">Customers</a>
+        <button ng-click="main.showAlert()">Show Alert</button>
+        <div ng-view></div>
+    </div>
     <!-- libraries -->
     <script src="static/angular/angular.js"></script>
+    <script src="static/angular-route/angular-route.js"></script>
 
     <!-- app files -->
     <script src="app/app.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/customer/customer.controller.js"></script>
 </body>
 </html>
