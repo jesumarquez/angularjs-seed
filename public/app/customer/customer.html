@@ -1,8 +1,10 @@
 <div ng-init="customer.getAll()">
     <h2>Customers (<span ng-bind="customer.list.length"></span>)</h2>
     <ul>
-        <li ng-repeat="c in customer.list"><span ng-bind="c.name"></span></li>
+        <li ng-repeat="c in customer.list"><a href="#" ng-click="customer.edit(c)"><span ng-bind="c.name"></span></a>&nbsp;<button ng-click="customer.delete(c.id)">X</button></li>
     </ul>
     <input type="text" name="name" id="name" ng-model="customer.name">
-    <button ng-click="customer.save()">Add</button>
+    <button ng-click="customer.save()" ng-show="customer.action === 'list'">Add</button>
+    <button ng-click="customer.update()" ng-show="customer.action === 'edit'">Update</button>
+    <button ng-click="customer.clear()" ng-show="customer.action === 'edit'">Cancel</button>
 </div>
