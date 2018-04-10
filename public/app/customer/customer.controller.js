@@ -21,7 +21,7 @@
             customerSvc.save(vm.name)
                 .then(function (res) {
                     vm.name = '';
-                    getAll();
+                    vm.getAll();
                 })
         }
     }
