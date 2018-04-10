@@ -17,7 +17,8 @@
         vm.update = update;
         vm.clear = clear;
         vm.delete = deleteCustomer;
-
+        vm.isEditing = isEditing;
+        
         function getAll() {
             customerSvc.getAll()
             .then(function(res){
@@ -63,6 +64,10 @@
                    vm.clear();
                    vm.getAll(); 
                 });
+        }
+
+        function isEditing() {
+            return vm.action === 'edit';
         }
     }
 })();

@@ -9,9 +9,10 @@
 </head>
 <body>
     <div ng-controller="MainController as main">
-        <h1>Demo <span ng-bind="main.version"></span></h1>
+        <h1>Demo <span ng-bind="main.version"></span>&nbsp;<button ng-click="main.showAlert()">Show Alert</button></h1>
+        <a href="/">Home</a>
         <a href="customer">Customers</a>
-        <button ng-click="main.showAlert()">Show Alert</button>
+        
         <div ng-view></div>
     </div>
     <!-- libraries -->
