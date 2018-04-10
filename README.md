@@ -25,7 +25,7 @@ Necesita [Nodejs](https://nodejs.org/) para la ejecución del backend.
     }
 
 ### PATCH
-api/customers/id
+    api/customers/id
 
 #### body:
 
