@@ -3,7 +3,7 @@ Estructura básica de una aplicación [AngularJs](https://docs.angularjs.org/gui
 
 Es una aplicación de ejemplo que permite la administración de clientes. 
 
-![screenshot.png](https://github.com/jesumarquez/angularjs-seed/blob/master/screenshot.png "Screenshot")
+![screenshot.png](/screenshot.png "Screenshot")
 
 La aplicación está separada en módulos para una mejor organización del código.
 
