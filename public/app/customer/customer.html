@@ -1,1 +1,8 @@
-<h2>Customers</h2>
+<div ng-init="customer.getAll()">
+    <h2>Customers (<span ng-bind="customer.list.length"></span>)</h2>
+    <ul>
+        <li ng-repeat="c in customer.list"><span ng-bind="c.name"></span></li>
+    </ul>
+    <input type="text" name="name" id="name" ng-model="customer.name">
+    <button ng-click="customer.save()">Add</button>
+</div>

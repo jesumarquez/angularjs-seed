@@ -1,15 +1,17 @@
 var express = require('express'),
     router = express.Router(),
-    customers = [];
+    customers = [],
+    currentId = 0;
 
 router.get('/', function (req,res) {
     res.json(customers);
 });
 
 router.post('/', function (req,res){
-    customers.push(req.body);
-    res.setHeader('Location', 'api/customer/' + req.body.id);
-    res.status(201).json(req.body);
+    var c = { id: currentId, name: req.body.name };
+    customers.push(c);
+    res.setHeader('Location', 'api/customer/' + currentId++);
+    res.status(201).json(c);
 });
 
 router.patch('/:id', function (req, res) {

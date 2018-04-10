@@ -1,6 +1,7 @@
 (function() {
     angular.module('app', [
         'ngRoute',
+        'ngResource',
         'app.customer'
     ])
     .config(AppConfig);
@@ -14,7 +15,8 @@
             })
             .when('/customer', {
                 templateUrl: '/app/customer/customer.html',
-                controller: 'CustomerCtrl'
+                controller: 'CustomerCtrl',
+                controllerAs: 'customer'
             });
 
         $locationProvider.html5Mode(true);

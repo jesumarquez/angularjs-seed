@@ -4,15 +4,13 @@ var express = require('express'),
     path = require('path'),
     port = process.env.port || 8099,
     customerRouter = require('./routes/customer.route'),
-    ignoredPaths = ['/static'];
+    ignoredPaths = ['/static', '/api'];
 
 app.use(express.static('public'));
 app.use('/static', express.static(__dirname + '/node_modules'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use('/api/customers', customerRouter);
 
 app.all('/*', function(req, res, next) {
     //Redirecting to index only the requests that do not start with ignored paths
@@ -21,6 +19,8 @@ app.all('/*', function(req, res, next) {
     else
       next();
   });
+
+app.use('/api/customers', customerRouter);
   
 function startsWith(string, array) {
     for(i = 0; i < array.length; i++)
