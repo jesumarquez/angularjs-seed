@@ -11,6 +11,9 @@ Necesita [Nodejs](https://nodejs.org/) para la ejecución del backend.
 ## Instalación
     npm install
 
+## Ejecución
+    npm start
+
 ## API
 ### GET
     api/customers
